@@ -55,9 +55,20 @@ import { Component, OnInit } from '@angular/core';
 
 
 //Event Binding - 9
-<button (click)="onClick()">Greet</button>
+<button (click)="onClick()">Greet</button><br>
 <button (click)="greeting='welcome vijaykumar'">Greet</button>
 {{greeting}}
+
+<br><br>
+// template-reference - 10
+<input #myInput type ="text"><br>
+<button (click)="logMessage(myInput)">Log</button>
+
+<br><br>
+// Two way Binding - 11
+
+<input [(ngModel)]="name" type="text">
+{{name}}
 
   `,
   // styleUrls: ['./test.component.css']
@@ -76,7 +87,9 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   // Property
-public name ="Codevolution";
+// public name ="Codevolution";
+//   two-way Binding
+  public name ="";
 public successClass = "text-success";
 public hasError = true;
 public isSpecial = true;
@@ -110,6 +123,15 @@ public isDisabled = true;
     // console.log(event);
     this.greeting = "welcome to itwinetech";
     // this.greeting = event.type;
+  }
+  
+//  Error: src/app/test/test.component.ts:28:14 - error TS7006: Parameter 'value' implicitly has an 'any' type.
+// Then you can edit this code in :- tsconfig.json
+
+  // "noImplicitReturns": true,
+//     "noImplicitAny": false,
+   logMessage(value){
+    console.log(value);
   }
   greetUser(){
     return "Hello--"+  this.name;
