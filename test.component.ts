@@ -20,6 +20,8 @@ import { Component, OnInit } from '@angular/core';
     </h2>
 
 // Interpolation - 5 
+//ex:- value={{name}}
+// it will only work string and number
 
     // <h2>{{2+2}}</h2>
     // <h2>{{"Welcome" + name}}</h2>
@@ -30,7 +32,11 @@ import { Component, OnInit } from '@angular/core';
     
   
 
-//Property-Binding - 6 
+//Property-Binding - 6
+ //ex:- [value]=name
+//:- it is used to properties and attributs change or update purpose using this property binding.
+//:- it will work only boolean values- true or false
+//it will work boolean values,string,numeric
 
     <input [id]="myId" type="text" value="Vijaykumar">
     <input bind-disabled="isDisabled" id="{{myId}}" type="text" value="Vijaykumar">
