@@ -34,6 +34,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Property-Binding - 6
  //ex:- [value]=name
+ //:- input values change or html values change
 //:- it is used to properties and attributs change or update purpose using this property binding.
 //:- it will work only boolean values- true or false
 //it will work boolean values,string,numeric
