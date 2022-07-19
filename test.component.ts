@@ -30,7 +30,44 @@ import { Component, OnInit } from '@angular/core';
 
     // <h2>{{greetUser()}}</h2>
     
-  
+
+
+// diffrence between Interpolation and Property-Binding
+
+// app.component.html
+<h1>{{title}}</h1>
+<!-- Interpolation -->
+
+<!-- it will only work string and number -->
+<!-- it will take string values thats why it will not show  -->
+<label for="">Interpolation</label>
+<input type="text" name="user-name" value={{name}} disabled={{disable}} />
+<br><br>
+
+<!-- Property-Binding -->
+
+<!-- it will work boolean values -->
+<!-- it will show -->
+<!-- to better we all use property binding -->
+<label for="">Property-Binding</label>
+<input type="text" name="user-name" [value]=name [disabled]=disable />
+
+
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Angular_binding_all';
+  name="vijay";
+  disable=false
+}
+
+
 
 //Property-Binding - 6
  //ex:- [value]=name
